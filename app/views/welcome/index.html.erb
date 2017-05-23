@@ -335,4 +335,18 @@
 <%# button_to 'start life', { action: 'pet_action' }, class: 'btn btn-primary' %>
 
 
+<script>
+  $(document).ready(function () {
+    // will call refreshPartial every 2 seconds
+    setInterval(refreshPartial, 2000)
 
+  });
+
+  // calls action refreshing the partial
+  function refreshPartial() {
+    $.ajax({
+      url: "welcome/refresh_part"
+    })
+  }
+
+</script>
