@@ -1,1 +1,338 @@
-<h2>cool</h2>
+<h2>zazaza</h2>
+
+
+<br>
+
+
+<% if current_user.pet %>
+    <% if current_user %>
+        <%= current_user.coins %> coins
+    <% end %>
+<script type="text/javascript">
+
+  function keyboard(keyCode) {
+    var key = {};
+    key.code = keyCode;
+    key.isDown = false;
+    key.isUp = true;
+    key.press = undefined;
+    key.release = undefined;
+    //The `downHandler`
+    key.downHandler = function(event) {
+      if (event.keyCode === key.code) {
+        if (key.isUp && key.press) key.press();
+        key.isDown = true;
+        key.isUp = false;
+      }
+      event.preventDefault();
+    };
+
+    //The `upHandler`
+    key.upHandler = function(event) {
+      if (event.keyCode === key.code) {
+        if (key.isDown && key.release) key.release();
+        key.isDown = false;
+        key.isUp = true;
+      }
+      event.preventDefault();
+    };
+
+    //Attach event listeners
+    window.addEventListener(
+        "keydown", key.downHandler.bind(key), false
+    );
+    window.addEventListener(
+        "keyup", key.upHandler.bind(key), false
+    );
+    return key;
+  }
+
+  var Container = PIXI.Container,
+      autoDetectRenderer = PIXI.autoDetectRenderer,
+      loader = PIXI.loader,
+      resources = PIXI.loader.resources,
+      TextureCache = PIXI.utils.TextureCache,
+      Texture = PIXI.Texture,
+      Sprite = PIXI.Sprite;
+
+  var stage = new PIXI.Container(),
+      renderer = PIXI.autoDetectRenderer(1105, 600, {antialias: false});
+  renderer.backgroundColor = 0xbbbbbb;
+  document.body.appendChild(renderer.view);
+  PIXI.settings.SCALE_MODE = PIXI.SCALE_MODES.NEAREST;
+  //Use Pixi's built-in `loader` object to load an image
+  PIXI.loader
+      .add("<%= image_path("sprites.json") %>")
+      .add("<%= image_path("bg.json") %>")
+      .load(setup);
+
+
+  var sprite;
+  var fl;
+  var fr;
+
+  //This `setup` function will run when the image has loaded
+  function setup() {
+
+    //Create the `sprite` sprite from the texture
+
+    //01 - normal 1
+    //02 - face right
+    //03 - face left
+    //04 - angry
+    //05 - sunk 1
+    //06 - eating 1
+    //07 - sunk 2
+    //08 - normal 2
+    //09 - halfsunk
+    //10 - eating 2
+    //11 - sunk 3
+    //12 - sunk 4
+    //13 - halfsunk angry
+    //14 - normal 3
+    //15 - halfsunk 2
+    //16 - normal 4
+
+//    var texture = TextureCache["01.png"];
+//        sprite = new Sprite(texture);
+//    var normal_t = TextureCache["01.png","08.png","14.png","16.png"];
+//    var normal_t = [];
+//    normal_t.push(new Sprite(TextureCache["01.png"]));
+//    var normal = new PIXI.extras.AnimatedSprite(normal_t);
+
+    var bg0 = PIXI.Texture.fromFrame("a14.png");
+    var bgx = new Sprite(bg0);
+    bgx.scale.set(3,2.5);
+    stage.addChild(bgx)
+
+    var bg1 = PIXI.Texture.fromFrame("a01.png");
+    var bg = new Sprite(bg1);
+    bg.scale.set(3,3);
+    stage.addChild(bg);
+
+
+
+
+    var textures = [];
+    var texture1 = PIXI.Texture.fromFrame('01.png');
+    var texture2 = PIXI.Texture.fromFrame('14.png');
+    var texture3 = PIXI.Texture.fromFrame('01.png');
+    var texture4 = PIXI.Texture.fromFrame('08.png');
+    textures.push(texture1);
+    textures.push(texture2);
+    textures.push(texture3);
+    textures.push(texture4);
+
+    sprite = new PIXI.extras.AnimatedSprite(textures);
+
+    //Add the sprite to the stage
+
+    //Render the stage
+    sprite.x = 525;
+    sprite.y = 420;
+    sprite.scale.set(5,5);
+    sprite.animationSpeed=.1;
+    sprite.gotoAndPlay(0);
+
+    stage.addChild(sprite);
+
+    var facingleft = PIXI.Texture.fromFrame("03.png");
+    fl = new Sprite(facingleft);
+    fl.x = 525;
+    fl.y = 420;
+    fl.scale.set(5,5);
+    fl.visible = false;
+    stage.addChild(fl);
+
+    var facingright = PIXI.Texture.fromFrame("02.png");
+    fr = new Sprite(facingright);
+    fr.x = 525;
+    fr.y = 420;
+    fr.scale.set(5,5);
+    fr.visible = false;
+    stage.addChild(fr);
+
+
+    var bg2 = PIXI.Texture.fromFrame("a43.png");
+    var bgb = new Sprite(bg2);
+    bgb.scale.set(3,3);
+    stage.addChild(bgb);
+//    renderer.render(stage);
+
+
+
+    var vel =8;
+
+    var left = keyboard(37),
+        up = keyboard(38),
+        right = keyboard(39),
+        down = keyboard(40);
+
+    //Left arrow key `press` method
+    left.press = function() {
+
+      //Change the sprite's velocity when the key is pressed
+      sprite.vx = -vel;
+      fl.vx = -vel;
+      fr.vx = -vel;
+      sprite.vy = 0;
+      fl.vy = 0;
+      fr.vy = 0
+
+      sprite.visible = false;
+      fl.visible = true;
+      fr.visible = false;
+    };
+
+    //Left arrow key `release` method
+    left.release = function() {
+
+      //If the left arrow has been released, and the right arrow isn't down,
+      //and the sprite isn't moving vertically:
+      //Stop the sprite
+      if (!right.isDown && sprite.vy === 0) {
+        sprite.vx = 0;
+        fl.vx = 0;
+        fr.vx = 0;
+
+        sprite.visible = true;
+        fl.visible = false;
+        fr.visible = false;
+      }
+    };
+
+    //Up
+    up.press = function() {
+      sprite.vy = -vel;
+      fl.vy = -vel;
+      fr.vy = -vel;
+      sprite.vx = 0;
+      fr.vx = 0;
+      fl.vx = 0;
+
+      sprite.visible = true;
+      fl.visible = false;
+      fr.visible = false;
+    };
+    up.release = function() {
+      if (!down.isDown && sprite.vx === 0) {
+        sprite.vy = 0;
+        fl.vy = 0;
+        fr.vy = 0;
+        sprite.visible = true;
+        fl.visible = false;
+        fr.visible = false;
+      }
+    };
+
+    //Right
+    right.press = function() {
+      sprite.vx = vel;
+      fl.vx = vel;
+      fr.vx = vel;
+      sprite.vy = 0;
+      fl.vy = 0;
+      fr.vy = 0;
+
+      sprite.visible = false;
+      fr.visible = true;
+      fl.visible = false;
+    };
+    right.release = function() {
+      if (!left.isDown && sprite.vy === 0) {
+        sprite.vx = 0;
+        fl.vx = 0;
+        fr.vx = 0;
+
+        sprite.visible = true;
+        fr.visible = false;
+        fl.visible = false;
+      }
+    };
+
+    //Down
+    down.press = function() {
+      sprite.vy = vel;
+      fr.vy = vel;
+      fl.vy = vel;
+      sprite.vx = 0;
+      fr.vx = 0;
+      fl.vx = 0;
+
+      sprite.visible = true;
+      fl.visible = false;
+      fr.visible = false;
+    };
+    down.release = function() {
+      if (!up.isDown && sprite.vx === 0) {
+        sprite.vy = 0;
+        fr.vy = 0;
+        fl.vy = 0;
+        sprite.visible = true;
+        fl.visible = false;
+        fr.visible = false;
+      }
+    };
+
+    //Set the game state
+    state = play;
+
+    //Start the game loop
+    gameLoop();
+  }
+
+  function gameLoop(){
+
+    //Loop this function 60 times per second
+    requestAnimationFrame(gameLoop);
+
+    //Move the sprite 1 pixel per frame
+    state();
+
+    //Render the stage
+    renderer.render(stage);
+  }
+  function play() {
+
+    //Use the sprite's velocity to make it move
+    sprite.x += sprite.vx || 0;
+    sprite.y += sprite.vy || 0;
+    fl.x += fl.vx || 0;
+    fl.y += fl.vy || 0;
+    fr.x += fr.vx || 0;
+    fr.y += fr.vy || 0;
+//    console.log(sprite.x);
+  }
+
+</script>
+
+
+
+
+    <%= button_to 'feed', { action: 'feed' }, class: 'btn btn-danger' %>
+    <%= button_to 'drink', { action: 'drink' }, class: 'btn btn-danger' %>
+    <%= button_to 'medicine', { action: 'medicine'}, class: 'btn btn-danger' %>
+    <%= button_to 'toilet', { action: 'toilet'}, class: 'btn btn-danger' %>
+    <%= button_to 'happyness', { action: 'happyness'}, class: 'btn btn-danger' %>
+    <%= button_to 'sleep', { action: 'sleep'}, class: 'btn btn-danger' %>
+
+    <div>
+      <h3><%= @pet.name %></h3>
+      <h3><%= @pet.age %></h3>
+      <%# pet_action %>
+
+      <h2>status</h2>
+      <div class="pet-status">
+        <%# render partial: 'pet_status' %>
+      </div>
+
+    </div>
+<% else %>
+  <%= button_to 'Start your adventure!', { controller: 'pets', action: 'create', :remote => true }, class: 'btn btn-success btn-lg' %>
+<% end %>
+
+<!-- this starts the lifecycle background job -->
+<%# button_to 'start life', { action: 'pet_action' }, class: 'btn btn-primary' %>
+
+
+

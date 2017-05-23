@@ -1,0 +1,80 @@
+{
+"frames": {
+	"a01.png": {
+		"frame": {"x":369, "y":836, "w":368, "h":208},
+		"spriteSourceSize": {"x":0,"y":0,"w":368,"h":208},
+		"sourceSize": {"w":368,"h":208}
+	},
+	"a02.png": {
+		"frame": {"x":0, "y":0, "w":496, "h":208},
+		"spriteSourceSize": {"x":0,"y":0,"w":496,"h":208},
+		"sourceSize": {"w":496,"h":208}
+	},
+	"a04.png": {
+		"frame": {"x":0, "y":209, "w":496, "h":208},
+		"spriteSourceSize": {"x":0,"y":0,"w":496,"h":208},
+		"sourceSize": {"w":496,"h":208}
+	},
+	"a05.png": {
+		"frame": {"x":738, "y":209, "w":240, "h":208},
+		"spriteSourceSize": {"x":0,"y":0,"w":240,"h":208},
+		"sourceSize": {"w":240,"h":208}
+	},
+	"a12.png": {
+		"frame": {"x":738, "y":828, "w":240, "h":208},
+		"spriteSourceSize": {"x":0,"y":0,"w":240,"h":208},
+		"sourceSize": {"w":240,"h":208}
+	},
+	"a13.png": {
+		"frame": {"x":0, "y":836, "w":368, "h":208},
+		"spriteSourceSize": {"x":0,"y":0,"w":368,"h":208},
+		"sourceSize": {"w":368,"h":208}
+	},
+	"a14.png": {
+		"frame": {"x":382, "y":627, "w":368, "h":200},
+		"spriteSourceSize": {"x":0,"y":0,"w":368,"h":200},
+		"sourceSize": {"w":368,"h":200}
+	},
+	"a15.png": {
+		"frame": {"x":811, "y":418, "w":240, "h":208},
+		"spriteSourceSize": {"x":0,"y":0,"w":240,"h":208},
+		"sourceSize": {"w":240,"h":208}
+	},
+	"a29.png": {
+		"frame": {"x":462, "y":418, "w":348, "h":208},
+		"spriteSourceSize": {"x":0,"y":0,"w":348,"h":208},
+		"sourceSize": {"w":348,"h":208}
+	},
+	"a37.png": {
+		"frame": {"x":833, "y":0, "w":176, "h":208},
+		"spriteSourceSize": {"x":0,"y":0,"w":176,"h":208},
+		"sourceSize": {"w":176,"h":208}
+	},
+	"a38.png": {
+		"frame": {"x":497, "y":0, "w":335, "h":208},
+		"spriteSourceSize": {"x":0,"y":0,"w":335,"h":208},
+		"sourceSize": {"w":335,"h":208}
+	},
+	"a43.png": {
+		"frame": {"x":0, "y":627, "w":381, "h":208},
+		"spriteSourceSize": {"x":0,"y":0,"w":381,"h":208},
+		"sourceSize": {"w":381,"h":208}
+	},
+	"a45.png": {
+		"frame": {"x":0, "y":418, "w":461, "h":208},
+		"spriteSourceSize": {"x":0,"y":0,"w":461,"h":208},
+		"sourceSize": {"w":461,"h":208}
+	},
+	"a46.png": {
+		"frame": {"x":497, "y":209, "w":240, "h":208},
+		"spriteSourceSize": {"x":0,"y":0,"w":240,"h":208},
+		"sourceSize": {"w":240,"h":208}
+	}
+
+},
+"meta": {
+	"image": "bg.png",
+	"size": {"w": 1052, "h": 1045},
+	"scale": "1"
+}
+}

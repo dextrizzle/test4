@@ -1,0 +1,80 @@
+{
+"frames": {
+	"Tamagotchi-life_app_character-color-poses_640.png": {
+		"frame": {"x":46, "y":47, "w":20, "h":22},
+		"spriteSourceSize": {"x":0,"y":0,"w":20,"h":22},
+		"sourceSize": {"w":20,"h":22}
+	},
+	"Tamagotchi-life_app_character-color-poses_641.png": {
+		"frame": {"x":23, "y":52, "w":22, "h":21},
+		"spriteSourceSize": {"x":0,"y":0,"w":22,"h":21},
+		"sourceSize": {"w":22,"h":21}
+	},
+	"Tamagotchi-life_app_character-color-poses_642.png": {
+		"frame": {"x":0, "y":31, "w":24, "h":20},
+		"spriteSourceSize": {"x":0,"y":0,"w":24,"h":20},
+		"sourceSize": {"w":24,"h":20}
+	},
+	"Tamagotchi-life_app_character-color-poses_643.png": {
+		"frame": {"x":67, "y":43, "w":12, "h":12},
+		"spriteSourceSize": {"x":0,"y":0,"w":12,"h":12},
+		"sourceSize": {"w":12,"h":12}
+	},
+	"Tamagotchi-life_app_character-color-poses_644.png": {
+		"frame": {"x":67, "y":56, "w":10, "h":10},
+		"spriteSourceSize": {"x":0,"y":0,"w":10,"h":10},
+		"sourceSize": {"w":10,"h":10}
+	},
+	"Tamagotchi-life_app_character-color-poses_645.png": {
+		"frame": {"x":69, "y":0, "w":10, "h":12},
+		"spriteSourceSize": {"x":0,"y":0,"w":10,"h":12},
+		"sourceSize": {"w":10,"h":12}
+	},
+	"Tamagotchi-life_app_character-color-poses_646.png": {
+		"frame": {"x":67, "y":67, "w":10, "h":10},
+		"spriteSourceSize": {"x":0,"y":0,"w":10,"h":10},
+		"sourceSize": {"w":10,"h":10}
+	},
+	"Tamagotchi-life_app_character-color-poses_647.png": {
+		"frame": {"x":0, "y":52, "w":22, "h":13},
+		"spriteSourceSize": {"x":0,"y":0,"w":22,"h":13},
+		"sourceSize": {"w":22,"h":13}
+	},
+	"Tamagotchi-life_app_character-color-poses_648.png": {
+		"frame": {"x":0, "y":0, "w":26, "h":30},
+		"spriteSourceSize": {"x":0,"y":0,"w":26,"h":30},
+		"sourceSize": {"w":26,"h":30}
+	},
+	"Tamagotchi-life_app_character-color-poses_649.png": {
+		"frame": {"x":27, "y":0, "w":20, "h":22},
+		"spriteSourceSize": {"x":0,"y":0,"w":20,"h":22},
+		"sourceSize": {"w":20,"h":22}
+	},
+	"Tamagotchi-life_app_character-color-poses_650.png": {
+		"frame": {"x":48, "y":0, "w":20, "h":21},
+		"spriteSourceSize": {"x":0,"y":0,"w":20,"h":21},
+		"sourceSize": {"w":20,"h":21}
+	},
+	"Tamagotchi-life_app_character-color-poses_651.png": {
+		"frame": {"x":48, "y":22, "w":20, "h":20},
+		"spriteSourceSize": {"x":0,"y":0,"w":20,"h":20},
+		"sourceSize": {"w":20,"h":20}
+	},
+	"Tamagotchi-life_app_character-color-poses_652.png": {
+		"frame": {"x":27, "y":23, "w":20, "h":23},
+		"spriteSourceSize": {"x":0,"y":0,"w":20,"h":23},
+		"sourceSize": {"w":20,"h":23}
+	},
+	"Tamagotchi-life_app_character-color-poses_653.png": {
+		"frame": {"x":0, "y":66, "w":20, "h":12},
+		"spriteSourceSize": {"x":0,"y":0,"w":20,"h":12},
+		"sourceSize": {"w":20,"h":12}
+	}
+
+},
+"meta": {
+	"image": "sprites.png",
+	"size": {"w": 80, "h": 79},
+	"scale": "1"
+}
+}
